@@ -66,7 +66,7 @@ def create_project_files(
     Create root-level project files.
 
     Creates files such as README.md and
-    requirements.txt if they do not already
+    pyproject.toml if they do not already
     exist.
 
     Args:
@@ -91,7 +91,17 @@ def create_project_files(
             f.write("   python src/app.py\n")
             f.write("   ```\n")
 
-    requirements_path = os.path.join(project_dir, "requirements.txt")
-    if not os.path.exists(requirements_path):
-        with open(requirements_path, "w") as f:
-            f.write("# Add your project dependencies here\n")
+    pyproject_path = os.path.join(
+        project_dir,
+        "pyproject.toml",
+    )
+
+    if not os.path.exists(pyproject_path):
+        with open(pyproject_path, "w") as f:
+            f.write("[project]\n")
+            f.write(f'name = "{project_name}"\n')
+            f.write('version = "0.1.0"\n')
+            f.write('description = ""\n')
+            f.write('requires-python = ">=3.10"\n')
+            f.write("dependencies = []\n")
+

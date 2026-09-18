@@ -4,9 +4,7 @@ version = "0.1.0"
 description = "A Create React App style project generator for Python"
 requires-python = ">=3.10"
 
-dependencies = [
-    "rich"
-]
+dependencies = []
 
 [dependency-groups]
 dev = [
@@ -34,6 +32,7 @@ omit = [
     "*/__init__.py",
     "*/__main__.py",
     "*/cli.py",             # excluded as presentational code only
+    "*/wizard/config.py",
 ]
 
 [tool.coverage.report]
