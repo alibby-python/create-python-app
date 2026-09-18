@@ -2,9 +2,8 @@
 import os
 import sys
 import time
-from pathlib import Path
 
-from rich.progress import Progress, SpinnerColumn, TextColumn
+from pathlib import Path
 
 from create_python_app.core.metadata import save_project_metadata
 from create_python_app.core.project import create_project_files, create_project_folders
@@ -12,6 +11,8 @@ from create_python_app.core.venv import create_venv
 from create_python_app.core.vscode import install_vscode_extensions
 from create_python_app.ui.confirms import confirm
 from create_python_app.ui.utils import apply_markup
+from create_python_app.ui.spinner import Spinner
+
 from create_python_app.wizard.panels import (
     show_project_details,
     show_setup_summary,
@@ -189,17 +190,12 @@ def main():
         Result:
             .venv
         """
-        with Progress(
-            SpinnerColumn(),
-            TextColumn("[bold blue]Creating virtual environment...[/bold blue]"),
-            transient=True,
-        ) as progress:
-            progress.add_task("venv", total=None)
-            venv_path = create_venv(project_dir)
-
-        print(
-            apply_markup("\n{green}✅ Creating virtual environment... Done[/green]\n")
-        )
+        with Spinner(
+            "Creating virtual environment..."
+        ):
+            venv_path = create_venv(
+                project_dir
+            )
 
         # --- STEP 7B: Create Standard Project Structure ---
         """

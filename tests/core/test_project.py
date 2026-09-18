@@ -65,7 +65,7 @@ def test_create_project_files_creates_root_files(
     )
 
     assert (tmp_path / "README.md").exists()
-    assert (tmp_path / "requirements.txt").exists()
+    assert (tmp_path / "pyproject.toml").exists()
 
 
 from create_python_app.core.project import (
@@ -87,7 +87,7 @@ def test_create_project_files_writes_readme(
     assert "Getting Started" in contents
 
 
-def test_create_project_files_writes_requirements(
+def test_create_project_files_writes_pyproject(
     tmp_path,
 ):
     create_project_files(
@@ -95,6 +95,12 @@ def test_create_project_files_writes_requirements(
         "test-project",
     )
 
-    contents = (tmp_path / "requirements.txt").read_text()
+    contents = (
+        tmp_path
+        / "pyproject.toml"
+    ).read_text()
 
-    assert "# Add your project dependencies here" in contents
+    assert '[project]' in contents
+    assert 'name = "test-project"' in contents
+    assert 'version = "0.1.0"' in contents
+    assert 'dependencies = []' in contents

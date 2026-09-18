@@ -13,8 +13,7 @@ import platform
 import subprocess
 from pathlib import Path
 
-from rich.progress import Progress, SpinnerColumn, TextColumn
-
+from create_python_app.ui.spinner import Spinner
 from create_python_app.ui.utils import apply_markup
 
 
@@ -108,18 +107,17 @@ def setup_vscode_settings(project_name: str, venv_path: str) -> str:
     return python_path
 
 
-def install_vscode_extensions(plugins, plugin_data):
+def install_vscode_extensions(
+    plugins, 
+    plugin_data
+):
 
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("[bold blue]Installing VSCode extensions...[/bold blue]"),
-        transient=True,
-    ) as progress:
-        progress.add_task("extensions", total=None)
+    installed = []
+    already_installed = []
 
-        installed = []
-        already_installed = []
-
+    with Spinner(
+        "Installing VSCode extensions..."
+    ):
         for plugin_name in plugins:
             plugin_details = plugin_data.get(plugin_name)
 
