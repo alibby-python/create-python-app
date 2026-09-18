@@ -8,6 +8,16 @@ dependencies = [
     "rich"
 ]
 
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "ruff",
+    "build",
+    "twine",
+    "pre-commit",
+]
+
 [project.scripts]
 create-python-app = "create_python_app.cli:main"
 
