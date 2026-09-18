@@ -41,7 +41,6 @@ def main():
     """
 
     try:
-
         # --- STEP 1: Display Welcome Panel ---
         print(" ")
         show_welcome()
@@ -66,7 +65,6 @@ def main():
         """
         project_name = get_project_name()
 
-
         # --- STEP 3: Set Default Project Directory ---
         """
         Wizard Step:
@@ -87,8 +85,7 @@ def main():
             C:\\Projects\\my-cool-app
         """
         default_project_path = os.path.join(
-            os.path.splitdrive(os.getcwd())[0] + os.sep,
-            project_name
+            os.path.splitdrive(os.getcwd())[0] + os.sep, project_name
         )
         project_dir = Path(get_project_directory(default_project_path))
 
@@ -115,7 +112,6 @@ def main():
         """
         default_editor = "VSCode" if os.getenv("VSCODE_GIT_IPC_HANDLE") else "Other"
         editor = get_editor(default_editor=default_editor)
-
 
         # --- STEP 5: Select Optional Plugins ---
         """
@@ -225,7 +221,6 @@ def main():
         """
         create_project_folders(project_dir, project_name)
 
-
         # --- STEP 7C: Create Base Project Files ---
         """
         Wizard Step:
@@ -239,7 +234,6 @@ def main():
             operation
         """
         create_project_files(project_dir, project_name)
-
 
         # --- STEP 8: Install VSCode Extensions (if applicable) ---
         """
@@ -260,7 +254,6 @@ def main():
         if editor == "VSCode" and plugins:
             print(" ")
             install_vscode_extensions(plugins, plugin_data)
-
 
         # --- STEP 9: Save Metadata ---
         """
@@ -337,39 +330,42 @@ def main():
             venv_path
             editor
         """
-        editor_commands = {
-            "VSCode": "code .",
-            "Cursor": "cursor .",
-            "Vim": "vim ."
-        }
+        editor_commands = {"VSCode": "code .", "Cursor": "cursor .", "Vim": "vim ."}
 
         open_command = editor_commands.get(editor)
 
+        print(apply_markup("\n{bold}🚀 Next Steps{/bold}\n"))
+
         print(
             apply_markup(
-                "\n{bold}🚀 Next Steps{/bold}\n"
+                "{blue}{bold}1.{/bold}{/blue} Change into your project directory:"
             )
         )
-
-        print(apply_markup("{blue}{bold}1.{/bold}{/blue} Change into your project directory:"))
         print(apply_markup(f"{{cyan}}cd {project_dir}{{/cyan}}"))
         print()
 
-        print(apply_markup("{blue}{bold}2.{/bold}{/blue} Activate the virtual environment"))
-        print(apply_markup(f"{{cyan}}{Path(venv_path).name}\\Scripts\\activate{{/cyan}}"))
+        print(
+            apply_markup(
+                "{blue}{bold}2.{/bold}{/blue} Activate the virtual environment"
+            )
+        )
+        print(
+            apply_markup(f"{{cyan}}{Path(venv_path).name}\\Scripts\\activate{{/cyan}}")
+        )
         print()
 
         if open_command:
-            print(apply_markup(f"{{blue}}{{bold}}3.{{/bold}}{{/blue}} Open the project in {editor}:"))
+            print(
+                apply_markup(
+                    f"{{blue}}{{bold}}3.{{/bold}}{{/blue}} Open the project in {editor}:"
+                )
+            )
             print(apply_markup(f"{{cyan}}{open_command}{{/cyan}}"))
         else:
-            print(
-                "Open the project using your preferred editor."
-            )
+            print("Open the project using your preferred editor.")
         print()
 
         print(apply_markup("{green}{bold}Happy coding! 🚀{/bold}{/green}\n"))
-
 
     except KeyboardInterrupt:
         # Graceful exit if user cancels with Ctrl+C

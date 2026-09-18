@@ -10,10 +10,6 @@ def test_create_venv_creates_directory(
         tmp_path,
     )
 
-    assert (
-        tmp_path / ".venv"
-    ).exists()
+    assert (tmp_path / ".venv").exists()
 
-    assert venv_path.endswith(
-        ".venv"
-    )
+    assert venv_path.endswith(".venv")

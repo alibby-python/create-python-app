@@ -6,15 +6,11 @@ from create_python_app.ui.inputs import (
 from create_python_app.ui.keyboard import Key
 
 
-@patch(
-    "create_python_app.ui.inputs.read_key"
-)
+@patch("create_python_app.ui.inputs.read_key")
 def test_input_with_default_returns_default(
     mock_read_key,
 ):
-    mock_read_key.return_value = Mock(
-        key=Key.ENTER
-    )
+    mock_read_key.return_value = Mock(key=Key.ENTER)
 
     result = input_with_default(
         "Name: ",
@@ -24,9 +20,7 @@ def test_input_with_default_returns_default(
     assert result == "test-project"
 
 
-@patch(
-    "create_python_app.ui.inputs.read_key"
-)
+@patch("create_python_app.ui.inputs.read_key")
 def test_input_with_default_appends_character(
     mock_read_key,
 ):
@@ -48,9 +42,7 @@ def test_input_with_default_appends_character(
     assert result == "x"
 
 
-@patch(
-    "create_python_app.ui.inputs.read_key"
-)
+@patch("create_python_app.ui.inputs.read_key")
 def test_input_with_default_multiple_characters(
     mock_read_key,
 ):
@@ -69,9 +61,7 @@ def test_input_with_default_multiple_characters(
     assert result == "abc"
 
 
-@patch(
-    "create_python_app.ui.inputs.read_key"
-)
+@patch("create_python_app.ui.inputs.read_key")
 def test_input_with_default_backspace(
     mock_read_key,
 ):
@@ -90,9 +80,7 @@ def test_input_with_default_backspace(
     assert result == "a"
 
 
-@patch(
-    "create_python_app.ui.inputs.read_key"
-)
+@patch("create_python_app.ui.inputs.read_key")
 def test_input_with_default_backspace_empty_buffer(
     mock_read_key,
 ):

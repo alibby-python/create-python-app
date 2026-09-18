@@ -3,12 +3,8 @@ from unittest.mock import patch
 from create_python_app.ui.panels import panel
 
 
-@patch(
-    "create_python_app.ui.panels.strip_ansi"
-)
-@patch(
-    "create_python_app.ui.panels.apply_markup"
-)
+@patch("create_python_app.ui.panels.strip_ansi")
+@patch("create_python_app.ui.panels.apply_markup")
 def test_panel_basic(
     mock_markup,
     mock_strip,
@@ -28,12 +24,8 @@ def test_panel_basic(
     assert "Hello" in output
 
 
-@patch(
-    "create_python_app.ui.panels.strip_ansi"
-)
-@patch(
-    "create_python_app.ui.panels.apply_markup"
-)
+@patch("create_python_app.ui.panels.strip_ansi")
+@patch("create_python_app.ui.panels.apply_markup")
 def test_panel_multiple_lines(
     mock_markup,
     mock_strip,
@@ -53,12 +45,8 @@ def test_panel_multiple_lines(
     assert "Line 2" in output
 
 
-@patch(
-    "create_python_app.ui.panels.strip_ansi"
-)
-@patch(
-    "create_python_app.ui.panels.apply_markup"
-)
+@patch("create_python_app.ui.panels.strip_ansi")
+@patch("create_python_app.ui.panels.apply_markup")
 def test_panel_wraps_long_text(
     mock_markup,
     mock_strip,
@@ -78,12 +66,8 @@ def test_panel_wraps_long_text(
     assert "A" in output
 
 
-@patch(
-    "create_python_app.ui.panels.strip_ansi"
-)
-@patch(
-    "create_python_app.ui.panels.apply_markup"
-)
+@patch("create_python_app.ui.panels.strip_ansi")
+@patch("create_python_app.ui.panels.apply_markup")
 def test_panel_empty_content(
     mock_markup,
     mock_strip,
@@ -102,12 +86,8 @@ def test_panel_empty_content(
     assert "Test" in output
 
 
-@patch(
-    "create_python_app.ui.panels.strip_ansi"
-)
-@patch(
-    "create_python_app.ui.panels.apply_markup"
-)
+@patch("create_python_app.ui.panels.strip_ansi")
+@patch("create_python_app.ui.panels.apply_markup")
 def test_panel_custom_colours(
     mock_markup,
     mock_strip,
@@ -124,12 +104,8 @@ def test_panel_custom_colours(
     )
 
 
-@patch(
-    "create_python_app.ui.panels.strip_ansi"
-)
-@patch(
-    "create_python_app.ui.panels.apply_markup"
-)
+@patch("create_python_app.ui.panels.strip_ansi")
+@patch("create_python_app.ui.panels.apply_markup")
 def test_panel_invalid_colours(
     mock_markup,
     mock_strip,
@@ -144,4 +120,3 @@ def test_panel_invalid_colours(
         title_fg="potato",
         border_style="cheese",
     )
-    

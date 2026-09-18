@@ -9,10 +9,13 @@ def confirm(
     hint = "[Y/n]" if default else "[y/N]"
 
     while True:
-
-        response = prompt(
-            f"{message} {hint}",
-        ).strip().lower()
+        response = (
+            prompt(
+                f"{message} {hint}",
+            )
+            .strip()
+            .lower()
+        )
 
         if not response:
             return default

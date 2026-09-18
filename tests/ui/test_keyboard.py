@@ -9,9 +9,7 @@ from create_python_app.ui.keyboard import (
 )
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_up_arrow(
     mock_getch,
 ):
@@ -25,9 +23,7 @@ def test_read_key_up_arrow(
     assert result == KeyPress(Key.UP)
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_down_arrow(
     mock_getch,
 ):
@@ -41,9 +37,7 @@ def test_read_key_down_arrow(
     assert result == KeyPress(Key.DOWN)
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_left_arrow(
     mock_getch,
 ):
@@ -57,9 +51,7 @@ def test_read_key_left_arrow(
     assert result == KeyPress(Key.LEFT)
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_right_arrow(
     mock_getch,
 ):
@@ -73,9 +65,7 @@ def test_read_key_right_arrow(
     assert result == KeyPress(Key.RIGHT)
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_unknown_extended(
     mock_getch,
 ):
@@ -89,23 +79,17 @@ def test_read_key_unknown_extended(
     assert result == KeyPress(Key.UNKNOWN)
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_ctrl_c(
     mock_getch,
 ):
     mock_getch.return_value = b"\x03"
 
-    with pytest.raises(
-        KeyboardInterrupt
-    ):
+    with pytest.raises(KeyboardInterrupt):
         read_key()
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_enter(
     mock_getch,
 ):
@@ -116,9 +100,7 @@ def test_read_key_enter(
     assert result == KeyPress(Key.ENTER)
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_backspace(
     mock_getch,
 ):
@@ -129,9 +111,7 @@ def test_read_key_backspace(
     assert result == KeyPress(Key.BACKSPACE)
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_space(
     mock_getch,
 ):
@@ -142,9 +122,7 @@ def test_read_key_space(
     assert result == KeyPress(Key.SPACE)
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_character(
     mock_getch,
 ):
@@ -158,9 +136,7 @@ def test_read_key_character(
     )
 
 
-@patch(
-    "create_python_app.ui.keyboard.msvcrt.getch"
-)
+@patch("create_python_app.ui.keyboard.msvcrt.getch")
 def test_read_key_decode_failure(
     mock_getch,
 ):
@@ -171,5 +147,3 @@ def test_read_key_decode_failure(
     assert result == KeyPress(
         Key.UNKNOWN,
     )
-
-

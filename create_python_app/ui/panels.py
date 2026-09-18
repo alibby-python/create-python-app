@@ -25,7 +25,7 @@ def panel(
     title_bg: str = "magenta",
     title_fg: str = "white",
     border_style: str = "magenta",
-    padding: int = 1
+    padding: int = 1,
 ):
     inner_width = width - 2
     content_width = inner_width - 2
@@ -47,19 +47,12 @@ def panel(
 
     title_text = f" {title} "
 
-    coloured_title = (
-        f"{title_bg_colour}"
-        f"{title_fg_colour}"
-        f"{title_text}"
-        f"{RESET}"
-    )
+    coloured_title = f"{title_bg_colour}{title_fg_colour}{title_text}{RESET}"
 
     title_bar_length = inner_width - len(title_text) - 4
 
     empty_line = (
-        f"{border_colour}│{RESET}"
-        f" {'':<{content_width}} "
-        f"{border_colour}│{RESET}"
+        f"{border_colour}│{RESET} {'':<{content_width}} {border_colour}│{RESET}"
     )
 
     top_border = (
@@ -73,37 +66,20 @@ def panel(
         + RESET
     )
 
-    print(
-        f"{border_colour}"
-        f"{top_border}"
-        f"{RESET}"
-    )
+    print(f"{border_colour}{top_border}{RESET}")
 
     for _ in range(padding):
         print(empty_line)
 
     for line in content.splitlines():
-
-        wrapped_lines = textwrap.wrap(
-            line,
-            width=content_width
-        ) or [""]
-
+        wrapped_lines = textwrap.wrap(line, width=content_width) or [""]
 
         for wrapped_line in wrapped_lines:
+            styled_line = apply_markup(wrapped_line)
 
-            styled_line = apply_markup(
-                wrapped_line
-            )
+            visible_length = len(strip_ansi(styled_line))
 
-            visible_length = len(
-                strip_ansi(styled_line)
-            )
-
-            line_padding = (
-                content_width
-                - visible_length
-            )
+            line_padding = content_width - visible_length
 
             print(
                 f"{border_colour}│{RESET}"
@@ -115,10 +91,4 @@ def panel(
     for _ in range(padding):
         print(empty_line)
 
-    print(
-        f"{border_colour}"
-        + "╰"
-        + "─" * inner_width
-        + "╯"
-        + f"{RESET}"
-    )
+    print(f"{border_colour}" + "╰" + "─" * inner_width + "╯" + f"{RESET}")

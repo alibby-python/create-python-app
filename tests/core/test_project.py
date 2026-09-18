@@ -51,11 +51,7 @@ def test_create_project_folders_writes_docs_readme(
         "my-app",
     )
 
-    contents = (
-        tmp_path
-        / "docs"
-        / "README.md"
-    ).read_text()
+    contents = (tmp_path / "docs" / "README.md").read_text()
 
     assert "Documentation for my-app" in contents
 
@@ -85,10 +81,7 @@ def test_create_project_files_writes_readme(
         "test-project",
     )
 
-    contents = (
-        tmp_path
-        / "README.md"
-    ).read_text()
+    contents = (tmp_path / "README.md").read_text()
 
     assert "# test-project" in contents
     assert "Getting Started" in contents
@@ -102,12 +95,6 @@ def test_create_project_files_writes_requirements(
         "test-project",
     )
 
-    contents = (
-        tmp_path
-        / "requirements.txt"
-    ).read_text()
+    contents = (tmp_path / "requirements.txt").read_text()
 
-    assert (
-        "# Add your project dependencies here"
-        in contents
-    )
+    assert "# Add your project dependencies here" in contents

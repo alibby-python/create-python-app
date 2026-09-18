@@ -31,11 +31,9 @@ def read_key() -> KeyPress:
     key = msvcrt.getch()
 
     if key in (b"\x00", b"\xe0"):
-
         key = msvcrt.getch()
 
         match key:
-
             case b"H":
                 return KeyPress(Key.UP)
 
@@ -64,10 +62,7 @@ def read_key() -> KeyPress:
         return KeyPress(Key.SPACE)
 
     try:
-        return KeyPress(
-            Key.CHARACTER,
-            key.decode("utf-8")
-        )
+        return KeyPress(Key.CHARACTER, key.decode("utf-8"))
 
     except UnicodeDecodeError:
         return KeyPress(Key.UNKNOWN)

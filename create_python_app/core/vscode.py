@@ -108,10 +108,7 @@ def setup_vscode_settings(project_name: str, venv_path: str) -> str:
     return python_path
 
 
-def install_vscode_extensions(
-    plugins,
-    plugin_data
-):
+def install_vscode_extensions(plugins, plugin_data):
 
     with Progress(
         SpinnerColumn(),
@@ -127,7 +124,6 @@ def install_vscode_extensions(
             plugin_details = plugin_data.get(plugin_name)
 
             if plugin_details:
-
                 ext_id = plugin_details["id"]
 
                 if is_extension_installed(ext_id):
@@ -137,15 +133,13 @@ def install_vscode_extensions(
                     installed.append(plugin_name)
                     print(apply_markup("{green} Done{/green}"))
 
-
     if installed:
         print(apply_markup("\n{green}{bold}Installed: {/bold}{/green}"))
         for plugin in installed:
-                    print(f"   ✓ {plugin}")
+            print(f"   ✓ {plugin}")
 
     if already_installed:
         print(apply_markup("\n{yellow}{bold}Already installed:{/bold}{/yellow}"))
 
         for plugin in already_installed:
             print(f"   • {plugin}")
-    

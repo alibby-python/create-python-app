@@ -32,16 +32,16 @@ def show_project_details(
     Args:
         project_name:
             Name of the project.
-    
+
         project_dir:
             Target project directory.
-        
+
         editor:
             Selected editor.
-    
+
         plugins:
             List of selected plugins.
-    """    
+    """
     panel(
         title="📦 Project Details",
         content=(
@@ -90,17 +90,9 @@ def show_setup_summary(
         venv_path:
             Path to the created virtual environment.
     """
-    print(
-        apply_markup(
-            "\n{green}{bold}✅ Setup complete!{/bold}{/green}"
-        )
-    )
+    print(apply_markup("\n{green}{bold}✅ Setup complete!{/bold}{/green}"))
 
-    print(
-        apply_markup(
-            "\nYour Python project is ready to go.\n"
-        )
-    )
+    print(apply_markup("\nYour Python project is ready to go.\n"))
 
     panel(
         title="📦 Setup Summary",

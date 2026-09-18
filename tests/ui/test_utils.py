@@ -13,24 +13,18 @@ def test_strip_ansi():
 
 
 def test_apply_markup_opening_tag():
-    result = apply_markup(
-        "{green}Hello{/}"
-    )
+    result = apply_markup("{green}Hello{/}")
 
     assert "Hello" in result
 
 
 def test_apply_markup_closing_tag():
-    result = apply_markup(
-        "{green}Hello{/green}"
-    )
+    result = apply_markup("{green}Hello{/green}")
 
     assert "Hello" in result
 
 
 def test_apply_markup_unknown_tag():
-    result = apply_markup(
-        "{banana}Hello{/banana}"
-    )
+    result = apply_markup("{banana}Hello{/banana}")
 
     assert "{banana}" in result

@@ -5,9 +5,7 @@ from .styles import (
     RESET,
 )
 
-ANSI_PATTERN = re.compile(
-    r"\x1b\[[0-9;]*m"
-)
+ANSI_PATTERN = re.compile(r"\x1b\[[0-9;]*m")
 
 
 def strip_ansi(text: str) -> str:
@@ -19,6 +17,7 @@ def strip_ansi(text: str) -> str:
         "",
         text,
     )
+
 
 def apply_markup(text: str) -> str:
     """

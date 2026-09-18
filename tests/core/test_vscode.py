@@ -13,35 +13,25 @@ from create_python_app.core.vscode import (
 def test_is_extension_installed_returns_true(
     mock_run,
 ):
-    mock_run.return_value = Mock(
-        stdout="ms-python.python\n"
-    )
+    mock_run.return_value = Mock(stdout="ms-python.python\n")
 
-    assert is_extension_installed(
-        "ms-python.python"
-    )
+    assert is_extension_installed("ms-python.python")
 
 
 @patch("create_python_app.core.vscode.subprocess.run")
 def test_is_extension_installed_returns_false(
     mock_run,
 ):
-    mock_run.return_value = Mock(
-        stdout=""
-    )
+    mock_run.return_value = Mock(stdout="")
 
-    assert not is_extension_installed(
-        "ms-python.python"
-    )
+    assert not is_extension_installed("ms-python.python")
 
 
 @patch("create_python_app.core.vscode.subprocess.run")
 def test_install_extension_calls_subprocess(
     mock_run,
 ):
-    install_extension(
-        "ms-python.python"
-    )
+    install_extension("ms-python.python")
 
     mock_run.assert_called_once_with(
         "code --install-extension ms-python.python",
@@ -50,9 +40,7 @@ def test_install_extension_calls_subprocess(
     )
 
 
-@patch(
-    "create_python_app.core.vscode.platform.system"
-)
+@patch("create_python_app.core.vscode.platform.system")
 def test_setup_vscode_settings_windows(
     mock_system,
     tmp_path,
@@ -64,20 +52,12 @@ def test_setup_vscode_settings_windows(
         "C:/project/.venv",
     )
 
-    assert result.endswith(
-        "Scripts\\python.exe"
-    )
+    assert result.endswith("Scripts\\python.exe")
 
-    assert (
-        tmp_path
-        / ".vscode"
-        / "settings.json"
-    ).exists()
+    assert (tmp_path / ".vscode" / "settings.json").exists()
 
 
-@patch(
-    "create_python_app.core.vscode.platform.system"
-)
+@patch("create_python_app.core.vscode.platform.system")
 def test_setup_vscode_settings_linux(
     mock_system,
     tmp_path,
@@ -97,9 +77,7 @@ def test_setup_vscode_settings_linux(
     )
 
 
-@patch(
-    "create_python_app.core.vscode.is_extension_installed"
-)
+@patch("create_python_app.core.vscode.is_extension_installed")
 def test_install_vscode_extensions_already_installed(
     mock_installed,
 ):
@@ -115,12 +93,8 @@ def test_install_vscode_extensions_already_installed(
     )
 
 
-@patch(
-    "create_python_app.core.vscode.install_extension"
-)
-@patch(
-    "create_python_app.core.vscode.is_extension_installed"
-)
+@patch("create_python_app.core.vscode.install_extension")
+@patch("create_python_app.core.vscode.is_extension_installed")
 def test_install_vscode_extensions_installs_extension(
     mock_installed,
     mock_install,
@@ -136,6 +110,4 @@ def test_install_vscode_extensions_installs_extension(
         },
     )
 
-    mock_install.assert_called_once_with(
-        "ms-python.python"
-    )
+    mock_install.assert_called_once_with("ms-python.python")

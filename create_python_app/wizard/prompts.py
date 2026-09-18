@@ -44,11 +44,12 @@ def get_project_name() -> str:
         User-supplied project name.
     """
     return prompt(
-    "What is your project name?",
-    default="my-python-app",
-    prompt_fg="blue",
-    text_fg="white"
-)
+        "What is your project name?",
+        default="my-python-app",
+        prompt_fg="blue",
+        text_fg="white",
+    )
+
 
 def get_project_directory(
     default_project_path: str,
@@ -69,6 +70,7 @@ def get_project_directory(
         default=default_project_path,
         validator=_ensure_folder,
     )
+
 
 def get_editor(default_editor):
     return select_prompt(
@@ -97,11 +99,7 @@ def get_plugins(
         Tuple containing selected plugin
         names and plugin metadata.
     """
-    plugins_file = (
-        Path(__file__).parent.parent
-        / "data"
-        / "plugins.json"
-    )
+    plugins_file = Path(__file__).parent.parent / "data" / "plugins.json"
 
     if plugins_file.exists():
         with open(plugins_file, "r", encoding="utf-8") as f:
@@ -116,10 +114,11 @@ def get_plugins(
     }
 
     if not available_plugins:
-
         print()
         print(
-            apply_markup("{blue}{bold}💡 Plugin installation is currently available for VS Code only.{/bold}{/blue}")
+            apply_markup(
+                "{blue}{bold}💡 Plugin installation is currently available for VS Code only.{/bold}{/blue}"
+            )
         )
 
         return [], {}
@@ -127,10 +126,7 @@ def get_plugins(
     selected_plugins = checkbox_prompt(
         message="Select packages",
         options=list(available_plugins.keys()),
-        instruction=(
-            "SPACE = Select/Deselect, "
-            "ENTER = Continue"
-        ),
+        instruction=("SPACE = Select/Deselect, ENTER = Continue"),
     )
 
     return (

@@ -18,18 +18,14 @@ def input_with_default(
     )
 
     while True:
-
         keypress = read_key()
 
         if keypress.key == Key.ENTER:
-
             print()
             return "".join(buffer)
 
         elif keypress.key == Key.BACKSPACE:
-
             if buffer:
-
                 buffer.pop()
 
                 print(
@@ -39,10 +35,7 @@ def input_with_default(
                 )
 
         elif keypress.key == Key.CHARACTER:
-
-            buffer.append(
-                keypress.value
-            )
+            buffer.append(keypress.value)
 
             print(
                 keypress.value,

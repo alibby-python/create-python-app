@@ -7,9 +7,7 @@ from create_python_app.wizard.panels import (
 )
 
 
-@patch(
-    "create_python_app.wizard.panels.panel"
-)
+@patch("create_python_app.wizard.panels.panel")
 def test_show_welcome(
     mock_panel,
 ):
@@ -18,9 +16,7 @@ def test_show_welcome(
     mock_panel.assert_called_once()
 
 
-@patch(
-    "create_python_app.wizard.panels.panel"
-)
+@patch("create_python_app.wizard.panels.panel")
 def test_show_project_details(
     mock_panel,
 ):
@@ -34,9 +30,7 @@ def test_show_project_details(
     mock_panel.assert_called_once()
 
 
-@patch(
-    "create_python_app.wizard.panels.panel"
-)
+@patch("create_python_app.wizard.panels.panel")
 def test_show_project_details_no_plugins(
     mock_panel,
 ):
@@ -50,12 +44,8 @@ def test_show_project_details_no_plugins(
     mock_panel.assert_called_once()
 
 
-@patch(
-    "create_python_app.wizard.panels.panel"
-)
-@patch(
-    "create_python_app.wizard.panels.apply_markup"
-)
+@patch("create_python_app.wizard.panels.panel")
+@patch("create_python_app.wizard.panels.apply_markup")
 def test_show_setup_summary(
     mock_markup,
     mock_panel,
@@ -72,12 +62,8 @@ def test_show_setup_summary(
     mock_panel.assert_called_once()
 
 
-@patch(
-    "create_python_app.wizard.panels.panel"
-)
-@patch(
-    "create_python_app.wizard.panels.apply_markup"
-)
+@patch("create_python_app.wizard.panels.panel")
+@patch("create_python_app.wizard.panels.apply_markup")
 def test_show_setup_summary_no_plugins(
     mock_markup,
     mock_panel,
@@ -91,5 +77,3 @@ def test_show_setup_summary_no_plugins(
     )
 
     mock_panel.assert_called_once()
-
-

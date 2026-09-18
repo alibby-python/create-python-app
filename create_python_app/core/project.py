@@ -5,7 +5,7 @@ from pathlib import Path
 def create_project_folders(
     project_dir: Path,
     project_name: str,
-    ):
+):
     """
     Create the standard project folder structure.
 
@@ -37,10 +37,10 @@ def create_project_folders(
             # Add a simple app entrypoint file
             with open(os.path.join(folder_path, "app.py"), "w") as f:
                 f.write(
-                    'def main():\n'
+                    "def main():\n"
                     '    print("Hello from your new Python app!")\n\n'
                     'if __name__ == "__main__":\n'
-                    '    main()\n'
+                    "    main()\n"
                 )
 
         elif folder_name == "tests":

@@ -34,8 +34,6 @@ def test_save_project_config_writes_json(
         tmp_path,
     )
 
-    data = json.loads(
-        file_path.read_text()
-    )
+    data = json.loads(file_path.read_text())
 
     assert data["project_name"] == "test-project"

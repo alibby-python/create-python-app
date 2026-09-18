@@ -9,9 +9,7 @@ from create_python_app.ui.prompts import (
 )
 
 
-@patch(
-    "create_python_app.ui.prompts.input_with_default"
-)
+@patch("create_python_app.ui.prompts.input_with_default")
 def test_prompt_with_default(
     mock_input,
 ):
@@ -27,9 +25,7 @@ def test_prompt_with_default(
     mock_input.assert_called_once()
 
 
-@patch(
-    "builtins.input"
-)
+@patch("builtins.input")
 def test_prompt_without_default(
     mock_input,
 ):
@@ -44,9 +40,7 @@ def test_prompt_without_default(
     mock_input.assert_called_once()
 
 
-@patch(
-    "create_python_app.ui.prompts.input_with_default"
-)
+@patch("create_python_app.ui.prompts.input_with_default")
 def test_prompt_custom_colours(
     mock_input,
 ):
@@ -62,9 +56,7 @@ def test_prompt_custom_colours(
     mock_input.assert_called_once()
 
 
-@patch(
-    "create_python_app.ui.prompts.input_with_default"
-)
+@patch("create_python_app.ui.prompts.input_with_default")
 def test_prompt_invalid_colour_falls_back(
     mock_input,
 ):
@@ -80,19 +72,13 @@ def test_prompt_invalid_colour_falls_back(
     mock_input.assert_called_once()
 
 
-@patch(
-    "create_python_app.ui.prompts.prompt"
-)
+@patch("create_python_app.ui.prompts.prompt")
 def test_filepath_prompt_returns_valid_path(
     mock_prompt,
 ):
-    mock_prompt.return_value = (
-        "C:/Projects/Test"
-    )
+    mock_prompt.return_value = "C:/Projects/Test"
 
-    validator = Mock(
-        return_value=(True, None)
-    )
+    validator = Mock(return_value=(True, None))
 
     result = filepath_prompt(
         message="Location",
@@ -102,14 +88,10 @@ def test_filepath_prompt_returns_valid_path(
 
     assert result == "C:/Projects/Test"
 
-    validator.assert_called_once_with(
-        "C:/Projects/Test"
-    )
+    validator.assert_called_once_with("C:/Projects/Test")
 
 
-@patch(
-    "create_python_app.ui.prompts.prompt"
-)
+@patch("create_python_app.ui.prompts.prompt")
 def test_filepath_prompt_retries_until_valid(
     mock_prompt,
 ):
@@ -142,15 +124,11 @@ def test_filepath_prompt_retries_until_valid(
     assert validator.call_count == 2
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_select_prompt_returns_default_option(
     mock_read_key,
 ):
-    mock_read_key.return_value = Mock(
-        key=Key.ENTER
-    )
+    mock_read_key.return_value = Mock(key=Key.ENTER)
 
     result = select_prompt(
         message="Editor",
@@ -164,9 +142,7 @@ def test_select_prompt_returns_default_option(
     assert result == "VSCode"
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_select_prompt_moves_down(
     mock_read_key,
 ):
@@ -187,15 +163,11 @@ def test_select_prompt_moves_down(
     assert result == "Cursor"
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_select_prompt_honours_default(
     mock_read_key,
 ):
-    mock_read_key.return_value = Mock(
-        key=Key.ENTER
-    )
+    mock_read_key.return_value = Mock(key=Key.ENTER)
 
     result = select_prompt(
         message="Editor",
@@ -210,9 +182,7 @@ def test_select_prompt_honours_default(
     assert result == "Cursor"
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_checkbox_prompt_selects_item(
     mock_read_key,
 ):
@@ -234,9 +204,7 @@ def test_checkbox_prompt_selects_item(
     ]
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_checkbox_prompt_selects_multiple_items(
     mock_read_key,
 ):
@@ -261,15 +229,11 @@ def test_checkbox_prompt_selects_multiple_items(
     ]
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_checkbox_prompt_honours_default(
     mock_read_key,
 ):
-    mock_read_key.return_value = Mock(
-        key=Key.ENTER
-    )
+    mock_read_key.return_value = Mock(key=Key.ENTER)
 
     result = checkbox_prompt(
         message="Plugins",
@@ -287,15 +251,11 @@ def test_checkbox_prompt_honours_default(
     ]
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_checkbox_prompt_returns_empty_selection(
     mock_read_key,
 ):
-    mock_read_key.return_value = Mock(
-        key=Key.ENTER
-    )
+    mock_read_key.return_value = Mock(key=Key.ENTER)
 
     result = checkbox_prompt(
         message="Plugins",
@@ -308,9 +268,7 @@ def test_checkbox_prompt_returns_empty_selection(
     assert result == []
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_select_prompt_move_up(
     mock_read_key,
 ):
@@ -328,9 +286,7 @@ def test_select_prompt_move_up(
     assert result == "VSCode"
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_checkbox_prompt_deselects_item(
     mock_read_key,
 ):
@@ -348,9 +304,7 @@ def test_checkbox_prompt_deselects_item(
     assert result == []
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_checkbox_prompt_handles_unknown_key(
     mock_read_key,
 ):
@@ -367,9 +321,7 @@ def test_checkbox_prompt_handles_unknown_key(
     assert result == []
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_checkbox_prompt_moves_up(
     mock_read_key,
 ):
@@ -390,9 +342,7 @@ def test_checkbox_prompt_moves_up(
     assert result == []
 
 
-@patch(
-    "create_python_app.ui.prompts.read_key"
-)
+@patch("create_python_app.ui.prompts.read_key")
 def test_select_prompt_ignores_unknown_key(
     mock_read_key,
 ):

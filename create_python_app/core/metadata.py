@@ -26,16 +26,11 @@ def save_project_metadata(
         - Path objects are automatically converted to strings.
     """
 
-    choices_file = (
-        Path(project_name)
-        / "create_python_app_choices.json"
-    )
+    choices_file = Path(project_name) / "create_python_app_choices.json"
 
     with open(choices_file, "w") as f:
         safe_choices = {
-            key: str(value)
-            if isinstance(value, Path)
-            else value
+            key: str(value) if isinstance(value, Path) else value
             for key, value in choices.items()
         }
 

@@ -33,7 +33,6 @@ def clear_lines(
     """
 
     for _ in range(count):
-
         clear_line()
 
         print(
@@ -49,20 +48,9 @@ def render_select_options(
     selected_index: int,
 ) -> None:
 
-    for index, option in enumerate(
-        options
-    ):
-
+    for index, option in enumerate(options):
         if index == selected_index:
-
-            print(
-                apply_markup(
-                    f"{{cyan}}❯ {option}{{/cyan}}"
-                )
-            )
+            print(apply_markup(f"{{cyan}}❯ {option}{{/cyan}}"))
 
         else:
-
-            print(
-                f"  {option}"
-            )
+            print(f"  {option}")
