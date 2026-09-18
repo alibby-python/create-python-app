@@ -2,25 +2,18 @@
 # Make sure all answers have option to be color coded
 
 from collections.abc import Callable
+
 from .inputs import input_with_default
-from .utils import apply_markup
-
-from .terminal import (
-    clear_lines, 
-    render_select_options, 
-    move_cursor_up
-)
-
 from .keyboard import (
     Key,
     read_key,
 )
-
 from .styles import (
     FOREGROUND_STYLES,
     RESET,
 )
-
+from .terminal import clear_lines, move_cursor_up, render_select_options
+from .utils import apply_markup
 
 PROMPT_COLOUR = FOREGROUND_STYLES["cyan"]
 

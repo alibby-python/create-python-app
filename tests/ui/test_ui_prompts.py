@@ -2,11 +2,12 @@ from unittest.mock import Mock, patch
 
 from create_python_app.ui.keyboard import Key
 from create_python_app.ui.prompts import (
-    prompt,
     checkbox_prompt,
     filepath_prompt,
+    prompt,
     select_prompt,
 )
+
 
 @patch(
     "create_python_app.ui.prompts.input_with_default"

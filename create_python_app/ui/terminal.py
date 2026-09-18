@@ -1,5 +1,6 @@
 from create_python_app.ui.utils import apply_markup
 
+
 def move_cursor_up(
     lines: int,
 ) -> None:

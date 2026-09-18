@@ -3,14 +3,12 @@ import os
 from pathlib import Path
 
 from create_python_app.ui.prompts import (
-    prompt, 
-    filepath_prompt, 
+    checkbox_prompt,
+    filepath_prompt,
+    prompt,
     select_prompt,
-    checkbox_prompt
 )
-
 from create_python_app.ui.utils import apply_markup
-from create_python_app.wizard.config import SUPPORTED_EDITORS
 
 
 def _ensure_folder(
