@@ -43,3 +43,6 @@ skip_empty = true
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["create_python_app*"]
