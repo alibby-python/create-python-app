@@ -162,9 +162,14 @@ for upcoming features and planned improvements.
 
 ## Contributing
 
-Contributions, bug reports and feature requests are welcome.
+
+Contributions, bug reports, feature requests and feedback are welcome.
 
 Please open an issue or discussion on GitHub.
+
+For development guidelines, coding standards and Conventional Commit requirements, see:
+
+- [Contributing Guide](docs/contributing.md)
 
 ---
 
