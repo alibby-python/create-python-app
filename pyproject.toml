@@ -1,0 +1,31 @@
+[project]
+name = "create-python-app"
+version = "0.1.0"
+description = "A Create React App style project generator for Python"
+requires-python = ">=3.10"
+
+dependencies = [
+    "rich"
+]
+
+[project.scripts]
+create-python-app = "create_python_app.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["N999"]
+
+[tool.coverage.run]
+source = ["create_python_app"]
+
+omit = [
+    "*/__init__.py",
+    "*/__main__.py",
+    "*/cli.py",             # excluded as presentational code only
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true

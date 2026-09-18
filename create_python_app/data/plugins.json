@@ -1,0 +1,14 @@
+{
+    "Python Extension (VSCode)": {
+        "id": "ms-python.python",
+        "editors": ["VSCode"]
+    },
+    "Pylance": {
+        "id": "ms-python.vscode-pylance",
+        "editors": ["VSCode"]
+    },
+    "Jupyter": {
+        "id": "ms-toolsai.jupyter",
+        "editors": ["VSCode"]
+    }
+}
