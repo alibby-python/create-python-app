@@ -39,3 +39,7 @@ omit = [
 [tool.coverage.report]
 show_missing = true
 skip_empty = true
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
