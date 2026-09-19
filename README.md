@@ -86,10 +86,8 @@ create-python-app is ideal for:
 
 ## Platform Support
 
-Currently tested on:
+Currently tested on Windows ✅
 
-- Windows ✅
- 
 Future releases aim to support:
 
 - Linux

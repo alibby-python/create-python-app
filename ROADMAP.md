@@ -1,33 +1,90 @@
-# 🗺️ Project Roadmap — Create Python App
+# 🗺️ Create Python App Roadmap
 
-This document tracks planned, in-progress, and completed work for the project.
+## Vision
 
-| Feature / Task                        | Description                                                                    | Status         | Priority  | Reference |
-| ------------------------------------- | ------------------------------------------------------------------------------ | -------------- | --------- | --------- |
-| **Optional Git repo setup**           | Add support for initializing a Git repo, with optional `.gitignore` generation | ⏳ Planned     | 🟡 Medium | —         |
-| **Unit tests (pytest)**               | Write tests for core functions (`create_venv`, `install_extension`, etc.)      | ⏳ Planned     | 🔴 High   | —         |
-| **Parameter support**                 | Allow users to pass CLI parameters (e.g., `--editor vscode`)                   | ⏳ Planned     | 🟡 Medium | —         |
-| **Multi-language support**            | Add localization for prompts and docs (EN, ES, FR, etc.)                       | 🧠 Idea        | 🟢 Low    | —         |
-| **GitHub Actions CI/CD**              | Automate testing, linting, and docs generation on push                         | ⏳ Planned     | 🔴 High   | —         |
-| **Versioning in docs**                | Add version/date footer to generated documentation                             | ⏳ Planned     | 🟡 Medium | —         |
-| **VSCode Plugin**                     | Build an extension for streamlined project creation                            | 🧠 Idea        | 🔴 High   | —         |
-| **Project logo / branding**           | Create a clean, modern logo for the repo and plugin                            | ⏳ In progress | 🟢 Low    | —         |
-| **Virtual environment usage**         | Ensure scripts run within `.venv` and not global Python                        | ⏳ Planned     | 🔴 High   | —         |
-| **Public documentation improvements** | Expand the generated JSON into user-facing docs (e.g., mkdocs or docusaurus)   | 🧠 Idea        | 🟡 Medium | —         |
+Create Python App aims to provide the easiest way to start a new Python project.
 
----
+The goal is not to generate every possible application type or support every workflow. Instead, the focus is on helping developers move quickly from:
 
-### Legend
+> "I have an idea"
 
-- 🔴 **High** — critical for MVP
-- 🟡 **Medium** — important, next milestone
-- 🟢 **Low** — nice-to-have / future release
-- ⏳ **Planned** — scheduled but not yet started
-- 🧠 **Idea** — exploratory / proposed
-- ✅ **Done** — completed task
+to
+
+> "I'm writing code"
+
+through a guided setup experience, sensible defaults, and modern development practices.
 
 ---
 
-### Notes
+## Principles
 
-You can link PRs, issues, or tickets directly in the **Reference** column once opened, e.g.:
+Create Python App is built around a few simple principles:
+
+- **Simple by default** – sensible defaults should require minimal configuration.
+- **Guided, not overwhelming** – users should not need to understand dozens of options before getting started.
+- **Editor-aware** – the setup experience should adapt to the tools a developer uses.
+- **Beginner-friendly** – useful for developers of all experience levels.
+- **Practical foundations** – start with a clean project structure and modern development practices.
+- **Focused on productivity** – spend less time configuring and more time building.
+
+---
+
+## Current Priorities
+
+The active roadmap is maintained in GitHub Projects.
+
+Current areas of focus include:
+
+- Release automation
+- Semantic versioning
+- PyPI publishing
+- Documentation improvements
+- GitHub Pages deployment
+
+---
+
+## Future Enhancements
+
+Planned areas of future development include:
+
+### User Experience
+
+- Native progress component
+- Additional terminal UI improvements
+- Configurable colour themes
+- Cross-platform keyboard support
+
+### Project Generation
+
+- Git repository initialisation
+- Project templates
+- Interactive setup profiles
+- Enhanced project previews
+
+### Editor Support
+
+- VS Code extension
+- Expanded editor detection
+- Additional editor-specific configuration
+
+### Documentation
+
+- API documentation generation
+- Architecture documentation
+- Tutorials and guides
+- Enhanced reference material
+
+### Extensibility
+
+- Template engine
+- Plugin registry
+- Community contributions
+
+---
+
+## Development Planning
+
+Detailed planning, prioritisation, and progress tracking are managed through GitHub Projects.
+
+GitHub Projects should always be considered the primary source of truth for active work.
+``
