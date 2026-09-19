@@ -47,3 +47,6 @@ htmlcov/
 # Temporary files
 *.tmp
 *.bak
+
+# Admin
+scripts/

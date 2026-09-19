@@ -1,7 +1,9 @@
 # app.py
+import argparse
 import os
 import sys
 import time
+from importlib.metadata import version
 from pathlib import Path
 
 from create_python_app.core.metadata import save_project_metadata
@@ -38,6 +40,18 @@ def main():
 
     All user-facing prompts use create-python-app's built-in terminal UI components, providing a consistent interactive CLI experience without external prompt dependencies.
     """
+    parser = argparse.ArgumentParser(
+        prog="create-python-app",
+        description=("Create Python projects in minutes with a guided setup wizard."),
+    )
+
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"create-python-app {version('create-python-app')}",
+    )
+
+    parser.parse_args()
 
     try:
         # --- STEP 1: Display Welcome Panel ---
