@@ -3,8 +3,6 @@ title: Contributing
 description: Information for contributors.
 ---
 
-# Contributing
-
 Thank you for your interest in contributing to Create Python App.
 
 Contributions of all sizes are welcome. Before creating commits, issues or pull requests, please review the guidelines below.

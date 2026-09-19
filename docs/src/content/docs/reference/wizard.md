@@ -11,8 +11,6 @@ sidebar:
   order: 10
 ---
 
-# Wizard Reference
-
 This page is generated automatically from source code documentation.
 
 
