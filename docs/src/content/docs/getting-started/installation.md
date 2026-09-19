@@ -23,7 +23,7 @@ python --version
 Once Create Python App is publicly available, install it with:
 
 ```bash
-pip install createpythonapp
+pip install cpa-wizard
 ```
 
 ## Verify Installation
@@ -41,7 +41,7 @@ If installation was successful, the Setup Wizard will be displayed.
 To upgrade to the latest version:
 
 ```bash
-pip install --upgrade createpythonapp
+pip install --upgrade cpa-wizard
 ```
 
 ## Uninstall

@@ -102,13 +102,13 @@ Future releases aim to support:
 ### PyPI
 
 ```bash
-pip install create-python-app
+pip install cpa-wizard
 ```
 
 ### pipx
 
 ```bash
-pipx install create-python-app
+pipx install cpa-wizard
 ```
 
 ---
@@ -118,7 +118,7 @@ pipx install create-python-app
 Create a new project:
 
 ```bash
-create-python-app
+cpa-wizard
 ```
 
 The wizard will guide you through:
