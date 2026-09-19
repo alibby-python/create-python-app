@@ -4,7 +4,6 @@ import time
 
 from .utils import apply_markup
 
-
 SPINNER_FRAMES = [
     "⠋",
     "⠙",
@@ -34,19 +33,13 @@ class Spinner:
 
     def _spin(self) -> None:
 
-        frames = itertools.cycle(
-            SPINNER_FRAMES
-        )
+        frames = itertools.cycle(SPINNER_FRAMES)
 
         while self.running:
-
             frame = next(frames)
 
             print(
-                apply_markup(
-                    f"\r{{blue}}{frame} "
-                    f"{self.message}{{/blue}}"
-                ),
+                apply_markup(f"\r{{blue}}{frame} {self.message}{{/blue}}"),
                 end="",
                 flush=True,
             )
@@ -79,21 +72,7 @@ class Spinner:
             self.thread.join()
 
         if exc_type is None:
-
-            print(
-                apply_markup(
-                    f"\r{{green}}✅ "
-                    f"{self.message} "
-                    f"Done{{/green}}"
-                )
-            )
+            print(apply_markup(f"\r{{green}}✅ {self.message} Done{{/green}}"))
 
         else:
-
-            print(
-                apply_markup(
-                    f"\r{{red}}❌ "
-                    f"{self.message} "
-                    f"Failed{{/red}}"
-                )
-            )
+            print(apply_markup(f"\r{{red}}❌ {self.message} Failed{{/red}}"))

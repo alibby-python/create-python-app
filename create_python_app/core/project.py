@@ -104,4 +104,3 @@ def create_project_files(
             f.write('description = ""\n')
             f.write('requires-python = ">=3.10"\n')
             f.write("dependencies = []\n")
-

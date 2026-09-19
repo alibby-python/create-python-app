@@ -95,12 +95,9 @@ def test_create_project_files_writes_pyproject(
         "test-project",
     )
 
-    contents = (
-        tmp_path
-        / "pyproject.toml"
-    ).read_text()
+    contents = (tmp_path / "pyproject.toml").read_text()
 
-    assert '[project]' in contents
+    assert "[project]" in contents
     assert 'name = "test-project"' in contents
     assert 'version = "0.1.0"' in contents
-    assert 'dependencies = []' in contents
+    assert "dependencies = []" in contents

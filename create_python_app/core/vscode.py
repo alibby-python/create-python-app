@@ -107,17 +107,12 @@ def setup_vscode_settings(project_name: str, venv_path: str) -> str:
     return python_path
 
 
-def install_vscode_extensions(
-    plugins, 
-    plugin_data
-):
+def install_vscode_extensions(plugins, plugin_data):
 
     installed = []
     already_installed = []
 
-    with Spinner(
-        "Installing VSCode extensions..."
-    ):
+    with Spinner("Installing VSCode extensions..."):
         for plugin_name in plugins:
             plugin_details = plugin_data.get(plugin_name)
 
