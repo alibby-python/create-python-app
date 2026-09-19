@@ -1,0 +1,29 @@
+:root {
+    --sl-color-accent-low: #071B3A;
+    --sl-color-accent: #00e5ff;
+}
+
+body > div > header {
+    background-color: var(--sl-color-accent-low)
+}
+
+starlight-theme-select > label > select,
+starlight-theme-select > label > svg.icon.label-icon {
+    color: var(--sl-color-accent);
+}
+
+starlight-theme-select > label > svg.icon.caret {
+    color: var(--sl-color-accent);
+}
+
+.social-icons:after {
+    border-inline-end: 1px solid #ffffff;
+}
+
+header a svg {
+    color: var(--sl-color-accent);
+}
+
+header a:hover svg {
+    color: #ffffff;
+}

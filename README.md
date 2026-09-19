@@ -96,6 +96,9 @@ Future releases aim to support:
 
 ## Installation
 
+> [!IMPORTANT]
+> Coming soon: create-python-app will be available via PyPI once the release pipeline is in place.
+
 ### PyPI
 
 ```bash
