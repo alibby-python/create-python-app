@@ -230,7 +230,7 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    print(f"✅ Documentation written to: {OUTPUT_FILE}")
+    print(f"Documentation written to: {OUTPUT_FILE}")
 
 
 if __name__ == "__main__":
