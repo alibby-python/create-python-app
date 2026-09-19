@@ -2,7 +2,6 @@
 import os
 import sys
 import time
-
 from pathlib import Path
 
 from create_python_app.core.metadata import save_project_metadata
@@ -10,9 +9,8 @@ from create_python_app.core.project import create_project_files, create_project_
 from create_python_app.core.venv import create_venv
 from create_python_app.core.vscode import install_vscode_extensions
 from create_python_app.ui.confirms import confirm
-from create_python_app.ui.utils import apply_markup
 from create_python_app.ui.spinner import Spinner
-
+from create_python_app.ui.utils import apply_markup
 from create_python_app.wizard.panels import (
     show_project_details,
     show_setup_summary,
@@ -190,12 +188,8 @@ def main():
         Result:
             .venv
         """
-        with Spinner(
-            "Creating virtual environment..."
-        ):
-            venv_path = create_venv(
-                project_dir
-            )
+        with Spinner("Creating virtual environment..."):
+            venv_path = create_venv(project_dir)
 
         # --- STEP 7B: Create Standard Project Structure ---
         """
@@ -365,7 +359,7 @@ def main():
 
     except KeyboardInterrupt:
         # Graceful exit if user cancels with Ctrl+C
-        print(apply_markup("\n{red}❌ Setup cancelled by user.{/red}\n"))
+        print(apply_markup("\n\n{red}❌ Setup cancelled by user.{/red}\n"))
         sys.exit(0)
 
 
