@@ -5,9 +5,6 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
 	site: 'https://alibby-python.github.io',
 
-	// Remove when custom domain is enabled.
-	base: '/create-python-app',
-
 	integrations: [
 		starlight({
 			title: "Create Python App",
