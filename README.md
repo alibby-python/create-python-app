@@ -1,8 +1,22 @@
-# create-python-app
+<p align="center">
+    <img src="images/cpa-logo.png">
+    <h3 align="center">Build. Code. Launch.</h3>
+</p>
 
-A guided command-line wizard for creating new Python projects in minutes.
 
-create-python-app is a guided command-line wizard that creates a project structure, configures your development environment, creates a virtual environment, and helps you start coding quickly with sensible defaults.
+![Static Badge](https://img.shields.io/badge/Python-3.13.7-3776AB)
+![Static Badge](https://img.shields.io/badge/Pytest-0A9EDC)
+![Static Badge](https://img.shields.io/badge/Coverage-100%25-4CAF50) 
+![Static Badge](https://img.shields.io/badge/License-MIT-purple) 
+
+create-python-app is a guided command-line wizard that helps developers create new Python projects in minutes.
+
+It creates a clean project structure, sets up a virtual environment, and can install recommended editor extensions to help you start coding quickly.
+
+
+## Screenshot
+
+![Example output for creating a site](images/happy-path.png)
 
 
 ## Why create-python-app?
@@ -60,11 +74,26 @@ The aim is simple:
 ✅ Clear next-step guidance after project creation
 
 
+## Who is this for?
 
-## Screenshot
+create-python-app is ideal for:
 
-![Example output for creating a site](images/happy-path.png)
+- Developers starting new Python projects
+- Students learning Python
+- Developers who want a quick, repeatable setup process
+- Anyone who prefers sensible defaults over extensive configuration
 
+
+## Platform Support
+
+Currently tested on:
+
+- Windows ✅
+ 
+Future releases aim to support:
+
+- Linux
+- macOS
 
 
 ## Installation
@@ -124,6 +153,7 @@ Result:
 my-python-app/
 │
 ├── .venv/
+├── docs/
 ├── src/
 ├── tests/
 ├── README.md
@@ -152,11 +182,7 @@ https://create-python-app.dev
 
 ## Roadmap
 
-See:
-
-ROADMAP.md
-
-for upcoming features and planned improvements.
+See [ROADMAP.md](ROADMAP.md) for upcoming features and planned improvements.
 
 ---
 
