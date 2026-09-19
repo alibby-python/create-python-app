@@ -15,6 +15,7 @@ dev = [
     "build",
     "twine",
     "pre-commit",
+    "python-semantic-release>=10.6.2",
 ]
 
 [project.scripts]
@@ -46,3 +47,10 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 include = ["create_python_app*"]
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:project.version"]
+branch = "main"
+upload_to_pypi = false
+build_command = "python -m build"
+commit_parser = "conventional"
