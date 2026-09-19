@@ -6,7 +6,7 @@ export default defineConfig({
 	site: 'https://alibby-python.github.io',
 
 	// Remove when custom domain is enabled.
-	base: '/create-react-app',
+	base: '/create-python-app',
 
 	integrations: [
 		starlight({
