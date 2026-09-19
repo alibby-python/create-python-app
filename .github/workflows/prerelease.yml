@@ -7,8 +7,8 @@ permissions:
   contents: write
 
 jobs:
-  publish:
-    name: Build and Publish Pre-Release
+  build:
+    name: Build Package
     runs-on: windows-latest
 
     steps:
@@ -31,6 +31,30 @@ jobs:
 
       - name: Validate package
         run: uv run twine check dist/*
+
+      - name: Upload package artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: package-dist
+          path: |
+            dist/*.whl
+            dist/*.tar.gz
+
+  publish:
+    name: Publish Pre-Release
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      id-token: write
+
+    steps:
+      - name: Download package artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: package-dist
+          path: dist
 
       - name: Publish to TestPyPI
         uses: pypa/gh-action-pypi-publish@release/v1
